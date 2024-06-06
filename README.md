@@ -17,7 +17,7 @@ These models are selected with consideration for the compute resource constraint
 The proposed methodology involves the following steps:
 1. Generate a response $y$ for a given prompt $x$ from a policy to be optimized, denoted as $\pi(y/x)$.
 2. Request the teacher to produce the corrected version $y'$ of $y$ denoted as $\tau(y'/y, x)$. The teacher can be a human or a more precise LLM.
-3. Assume a distribution function $f$ that gives the likelihood of the occurance of a given text. For a prompt $x$ and a corresponding response $y$, $f(y, x)$ can be written as $P(x)*P(y/x)$. Log-likelyhood becomes $\log(P(x)) + \log(P(y/x))$.
+3. Assume a distribution function $f$ that gives the likelihood of the occurance of a given text in a perfectly aligned space. For a prompt $x$ and a corresponding response $y$, $f(y, x)$ can be written as $P(x)*P(y/x)$. Log-likelyhood becomes $\log(P(x)) + \log(P(y/x))$.
 4. The amount of correction required can be seen as a difference between the occurance distribution $f(y, x) - f(y', x) = \log(P(y/x)) - \log(P(y'/x))$.
 5. The distribution $P$ can be parameterized through the policy $\pi$. For training this model, $P$ is directly set to $\pi$.
 7. Optimize the policy $\pi$ to minimize the necessary correction = $min_{\pi} ( \log(\pi(y/x) - \log(\pi(y’/x) )$
