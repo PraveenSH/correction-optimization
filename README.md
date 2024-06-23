@@ -23,7 +23,7 @@ The proposed methodology involves the following steps:
 7. Optimize the policy $\pi$ to minimize the necessary correction = $min_{\pi} ( \log(\pi(y/x) - \log(\pi(y’/x) )$
 
 ## Domain specific custom objective
-This framework allows for the selection of \\(P\\), offering the flexibility to choose. If additional prior assumptions are available, they can be integrated. For instance, a prior concerning the distribution of response lengths could be included, limiting the model to produce responses of a certain length. If $P(y)$ = $\pi(y)$ * $l(y)$, where $l(y)$ is a prior specific to a target domain, the optimization function becomes $$min_{\pi} ( \log(\pi(y/x)) - \log(\pi(y’/x) ) + \log(l(y)) - \log(l(y’)) $$ This indicates the aim to minimize the extra loss specific to the target domain.
+This framework allows for the selection of $P$, offering the flexibility to choose. If additional prior assumptions are available, they can be integrated. For instance, a prior concerning the distribution of response lengths could be included, limiting the model to produce responses of a certain length. If $P(y)$ = $\pi(y)$ * $l(y)$, where $l(y)$ is a prior specific to a target domain, the optimization function becomes $$min_{\pi} ( \log(\pi(y/x)) - \log(\pi(y’/x) ) + \log(l(y)) - \log(l(y’)) $$ This indicates the aim to minimize the extra loss specific to the target domain.
    
 ## Connection with Direct Preference Optimization (DPO) and Contrastive Preference Learning (CPL)
 The proposed approach has a direct connection to the [DPO](https://arxiv.org/pdf/2305.18290) and [CPL](https://arxiv.org/pdf/2310.13639) frameworks.
